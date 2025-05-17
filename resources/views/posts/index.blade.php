@@ -1,14 +1,4 @@
 <x-app-layout>
-    <x-slot name="header">
-        <div class="flex justify-between items-center">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Posts') }}
-            </h2>
-            <a href="{{ route('posts.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Create Post
-            </a>
-        </div>
-    </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -38,14 +28,14 @@
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $post->title }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $post->category->name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $post->user->name }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <a href="{{ route('posts.show', $post) }}" class="text-blue-600 hover:text-blue-900 mr-3">View</a>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium flex space-x-4 gap-2">
+                                            <a href="{{ route('posts.show', $post) }}" class="text-blue-600 hover:underline">View</a>
                                             @if($post->user_id === auth()->id())
-                                                <a href="{{ route('posts.edit', $post) }}" class="text-indigo-600 hover:text-indigo-900 mr-3">Edit</a>
+                                                <a href="{{ route('posts.edit', $post) }}" class="text-indigo-600 hover:underline">Edit</a>
                                                 <form action="{{ route('posts.destroy', $post) }}" method="POST" class="inline">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
+                                                    <button type="submit" class="text-red-600 hover:underline" onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
                                                 </form>
                                             @endif
                                         </td>

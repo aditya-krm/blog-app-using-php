@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <button type="submit" class="border font-bold py-2 px-4 rounded">
                                 Create Post
                             </button>
                             <a href="{{ route('posts.index') }}" class="text-gray-600 hover:text-gray-900">Cancel</a>

@@ -33,13 +33,13 @@
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $category->name }}</td>
                                     <td class="px-6 py-4">{{ Str::limit($category->description, 100) }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <a href="{{ route('categories.show', $category) }}" class="text-blue-600 hover:text-blue-900 mr-3">View</a>
-                                        <a href="{{ route('categories.edit', $category) }}" class="text-indigo-600 hover:text-indigo-900 mr-3">Edit</a>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium flex space-x-4 gap-2">
+                                        <a href="{{ route('categories.show', $category) }}" class="text-blue-600 hover:underline">View</a>
+                                        <a href="{{ route('categories.edit', $category) }}" class="text-indigo-600 hover:underline">Edit</a>
                                         <form action="{{ route('categories.destroy', $category) }}" method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('Are you sure you want to delete this category?')">Delete</button>
+                                            <button type="submit" class="text-red-600 hover:underline" onclick="return confirm('Are you sure you want to delete this category?')">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

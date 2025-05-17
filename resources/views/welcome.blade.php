@@ -19,13 +19,13 @@
                                 {{ config('app.name', 'Laravel') }}
                             </a>
                         </div>
-                        <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-4 gap-4">
                             <a href="{{ route('blog.index') }}" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">Blog</a>
                             @auth
                                 <a href="{{ route('dashboard') }}" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">Dashboard</a>
                             @else
                                 <a href="{{ route('login') }}" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">Log in</a>
-                                <a href="{{ route('register') }}" class="inline-flex items-center px-4 py-2 bg-blue-500 dark:bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-600 dark:hover:bg-blue-700">Register</a>
+                                <a href="{{ route('register') }}" class="text-white border p-2 px-4 font-bold rounded-md dark:hover:text-blue-600">Register</a>
                             @endauth
                         </div>
                     </div>

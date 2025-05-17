@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold text-gray-900 mb-8">Blog Posts</h1>
+            <h1 class="text-3xl font-bold text-white">Blog Posts</h1>
             
             <!-- Search and Filter Section -->
             <div class="mb-8">
@@ -31,14 +31,14 @@
                     <div class="flex gap-2">
                         <button
                             type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            class="bg-blue-500 hover:bg-blue-700 text-white border font-bold mb-2 p-2 rounded"
                         >
-                            Filter
+                            Search with filter
                         </button>
                         @if(request('search') || request('category'))
                             <a
                                 href="{{ route('blog.index') }}"
-                                class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+                                class="bg-gray-500 hover:bg-gray-700 text-white font-bold mb-2 py-2 px-4 rounded"
                             >
                                 Clear
                             </a>
@@ -60,7 +60,7 @@
             <!-- Posts List -->
             <div class="space-y-8">
                 @foreach ($posts as $post)
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-4">
                         <div class="p-6">
                             <div class="flex justify-between items-start">
                                 <div>
